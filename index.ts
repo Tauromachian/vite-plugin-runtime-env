@@ -3,12 +3,12 @@ import type { Plugin } from "vite";
 export default function runtimeEnv(): Plugin {
   return {
     name: "runtime-env",
-    transform: (code: string) => {
+    transform(code: string) {
       const newCode = code.replace(/import\.meta\.env/g, "window.env");
 
       return newCode;
     },
-    transformIndexHtml: () => {
+    transformIndexHtml() {
       const script =
         'import envVars from \'"env.js"; window.env = { ...window.env, ...envVars }';
 

@@ -4,7 +4,7 @@ export default function runtimeEnv(): Plugin {
   return {
     name: "runtime-env",
     transform: (code: string) => {
-      const newCode = code.replace(/import\.meta\.env/, "window.env");
+      const newCode = code.replace(/import\.meta\.env/g, "window.env");
 
       return newCode;
     },

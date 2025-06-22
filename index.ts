@@ -1,6 +1,18 @@
 import type { Plugin } from "vite";
 
-export default function runtimeEnv(): Plugin {
+type RuntimeConfig = {
+  jsFileName: string;
+  globalObjectName: string;
+  injectScript: boolean;
+};
+
+export default function runtimeEnv(
+  config: RuntimeConfig = {
+    jsFileName: "env",
+    globalObjectName: "env",
+    injectScript: true,
+  },
+): Plugin {
   return {
     name: "runtime-env",
     transform(code: string) {
@@ -9,8 +21,9 @@ export default function runtimeEnv(): Plugin {
       return newCode;
     },
     transformIndexHtml() {
-      const script =
-        'import envVars from \'"env.js"; window.env = { ...window.env, ...envVars }';
+      if (!config.injectScript) return;
+
+      const script = `import envVars from \'"${config.jsFileName}.js"; window.${config.globalObjectName} = { ...window.env, ...envVars }`;
 
       return [
         {

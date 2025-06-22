@@ -4,14 +4,19 @@
   "description": "Read environment variables on runtime instead of build time",
   "main": "index.js",
   "packageManager": "yarn@4.4.1",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "vitest",
     "release": "np",
     "preview": "np --preview",
     "build": "tsup src/index.ts --dts --format esm --env.NODE_ENV production"
   },
-  "keywords": ["vite", "vite-plugin"],
+  "keywords": [
+    "vite",
+    "vite-plugin"
+  ],
   "author": "Jose Garcia",
   "license": "ISC",
   "devDependencies": {

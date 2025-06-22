@@ -6,7 +6,8 @@
   "packageManager": "yarn@4.4.1",
   "scripts": {
     "test": "vitest",
-    "release": "np"
+    "release": "np",
+    "preview": "np --preview"
   },
   "keywords": ["vite", "vite-plugin"],
   "author": "Jose Garcia",

@@ -1,18 +1,18 @@
 import type { Plugin } from "vite";
 
 type RuntimeConfig = {
-  jsFileName: string;
-  globalObjectName: string;
-  injectScript: boolean;
+  jsFileName?: string;
+  globalObjectName?: string;
+  injectScript?: boolean;
 };
 
-export default function runtimeEnv(
-  config: RuntimeConfig = {
-    jsFileName: "env",
-    globalObjectName: "env",
-    injectScript: true,
-  },
-): Plugin {
+export default function runtimeEnv(config?: RuntimeConfig): Plugin {
+  config = {
+    jsFileName: config?.jsFileName ?? "env.js",
+    globalObjectName: config?.globalObjectName ?? "env",
+    injectScript: config?.injectScript ?? true,
+  };
+
   return {
     name: "runtime-env",
     transform(code: string) {

@@ -1,5 +1,5 @@
 {
-  "name": "vite-plugin-runtime-env",
+  "name": "@jogarcia/vite-plugin-runtime-env",
   "version": "0.0.1",
   "description": "Read environment variables on runtime instead of build time",
   "main": "index.js",
@@ -7,10 +7,7 @@
   "scripts": {
     "test": "vitest"
   },
-  "keywords": [
-    "vite",
-    "vite-plugin"
-  ],
+  "keywords": ["vite", "vite-plugin"],
   "author": "Jose Garcia",
   "license": "ISC",
   "devDependencies": {

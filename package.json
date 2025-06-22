@@ -4,7 +4,7 @@
   "description": "Read environment variables on runtime instead of build time",
   "main": "index.js",
   "packageManager": "yarn@4.4.1",
-  "files": ["index.ts"],
+  "files": ["dist"],
   "scripts": {
     "test": "vitest",
     "release": "np",

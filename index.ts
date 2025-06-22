@@ -8,7 +8,7 @@ type RuntimeConfig = {
 
 export default function runtimeEnv(config?: RuntimeConfig): Plugin {
   config = {
-    jsFileName: config?.jsFileName ?? "env.js",
+    jsFileName: config?.jsFileName ?? "env",
     globalObjectName: config?.globalObjectName ?? "env",
     injectScript: config?.injectScript ?? true,
   };

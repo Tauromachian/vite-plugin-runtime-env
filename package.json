@@ -9,6 +9,7 @@
     "test": "vitest",
     "release": "np",
     "preview": "np --preview",
+    "build": "tsup src/index.ts --dts --format esm --env.NODE_ENV production"
   },
   "keywords": ["vite", "vite-plugin"],
   "author": "Jose Garcia",
@@ -17,6 +18,8 @@
     "@biomejs/biome": "2.0.4",
     "@types/node": "^24.0.3",
     "np": "^10.2.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3",
     "vite": "^6.3.5",
     "vitest": "^3.2.4"
   }

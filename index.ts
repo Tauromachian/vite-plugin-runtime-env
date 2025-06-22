@@ -16,7 +16,10 @@ export default function runtimeEnv(
   return {
     name: "runtime-env",
     transform(code: string) {
-      const newCode = code.replace(/import\.meta\.env/g, "window.env");
+      const newCode = code.replace(
+        /import\.meta\.env/g,
+        `window.${config.globalObjectName}`,
+      );
 
       return newCode;
     },

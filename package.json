@@ -16,8 +16,8 @@
   },
   "scripts": {
     "test": "vitest",
-    "release": "yarn build && np --contents=dist",
-    "preview": "yarn build && np --preview --contents=dist",
+    "release": "yarn build && np",
+    "preview": "yarn build && np --preview",
     "build": "tsup src/index.ts --dts --format esm --env.NODE_ENV production"
   },
   "keywords": [

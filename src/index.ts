@@ -35,7 +35,7 @@ export default function runtimeEnv(config?: RuntimeConfig): Plugin {
             type: "module",
           },
           children: script,
-          injectTo: "head",
+          injectTo: "head-prepend",
         },
       ];
     },

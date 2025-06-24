@@ -1,12 +1,20 @@
 # Vite runtime env
 
-In some projects you may need to import "environment variables" on runtime.
+This plugin lets you use environment variables on run-time.
 
-With this plugin I solve that issue in a simple manner.
+## Options
+
+There are three options
+
+| Name             | Type      | Description                                                    | Default      |
+|------------------|-----------|----------------------------------------------------------------|--------------|
+| jsFileName       | string    | To set the name of the variables file.                         | 'env'        |
+| globalObjectName | string    | To set the name of the global(window) object.                  | 'window'.env |
+| injectScript     | boolean   | To enable/disable the script (That loads the config variables) | true         |
 
 ## Use
 
-Use it like so:
+Use it like so. Notice that you can pass the options you want.
 
 ```ts
 import runtimeEnv from '@jogarcia/vite-plugin-runtime-env'
@@ -18,23 +26,7 @@ export default defineConfig({
 });
 ```
 
-## What does it does exactly?
-
-This plugin:
-
-1. Replaces every `import.meta.env` with a `window.env`
-2. Injects a script at the head of your HTML that reads a JS file which is expected to contain the runtime variables.
-
-## Options
-
-There are three main Options
-
-1. `jsFileName: string`: To set the name of the variables file. It's default is `env`.
-2. `gobalObjectName: string`: To set the name of the global(window) object. The default is `env` as in `window.env`
-3. `injectScript: boolean`: To enable/disable the script (That loads the config variables). The default is true.
-
-Ex:
-
+When using options
 
 ```ts
 import runtimeEnv from '@jogarcia/vite-plugin-runtime-env'
@@ -51,3 +43,10 @@ export default defineConfig({
   ],
 });
 ```
+
+## What does it does exactly?
+
+This plugin:
+
+1. Replaces every `import.meta.env` with a `window.env`
+2. Injects a script at the head of your HTML that reads a JS file which is expected to contain the runtime variables.

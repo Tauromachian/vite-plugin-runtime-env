@@ -26,7 +26,7 @@ export default function runtimeEnv(config?: RuntimeConfig): Plugin {
     transformIndexHtml() {
       if (!config.injectScript) return;
 
-      const script = `import envVars from "${config.jsFileName}.js"; window.${config.globalObjectName} = { ...window.${config.globalObjectName}, ...envVars }`;
+      const script = `import envVars from "./${config.jsFileName}.js"; window.${config.globalObjectName} = { ...window.${config.globalObjectName}, ...envVars }`;
 
       return [
         {

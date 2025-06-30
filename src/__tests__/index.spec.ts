@@ -68,7 +68,7 @@ describe("vite-plugin-runtime-env", () => {
       });
 
       expect(result.output[0].source).toContain(
-        'import envVars from "env.js"; window.env = { ...window.env, ...envVars }',
+        'import envVars from "./env.js"; window.env = { ...window.env, ...envVars }',
       );
     });
 
@@ -86,7 +86,7 @@ describe("vite-plugin-runtime-env", () => {
       });
 
       expect(result.output[0].source).toContain(
-        'import envVars from "config.js"; window.env = { ...window.env, ...envVars }',
+        'import envVars from "./config.js"; window.env = { ...window.env, ...envVars }',
       );
     });
 
@@ -104,7 +104,7 @@ describe("vite-plugin-runtime-env", () => {
       });
 
       expect(result.output[0].source).toContain(
-        'import envVars from "env.js"; window.i_am_batman = { ...window.i_am_batman, ...envVars }',
+        'import envVars from "./env.js"; window.i_am_batman = { ...window.i_am_batman, ...envVars }',
       );
     });
 
@@ -122,7 +122,7 @@ describe("vite-plugin-runtime-env", () => {
       });
 
       expect(result.output[0].source).to.not.contain(
-        'import envVars from \'"env.js"; window.env = { ...window.env, ...envVars }',
+        'import envVars from "./env.js"; window.env = { ...window.env, ...envVars }',
       );
     });
   });

@@ -50,3 +50,12 @@ This plugin:
 
 1. Replaces every `import.meta.env` with a `window.env`
 2. Injects a script at the head of your HTML that reads a JS file which is expected to contain the runtime variables.
+
+The scripts (by default) expects a js file named `env.js`. And the structure should like this:
+
+```js
+export default {
+    VITE_SOME_VAR: 123,
+    APP_SOME_VAR: 321
+}
+```
